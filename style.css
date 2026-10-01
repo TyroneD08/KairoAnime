@@ -1,0 +1,257 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: #222;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.site-header{
+    width: 100%;
+    padding: 22px 24px;
+    background: #29272c;
+    color: #fff;
+}
+
+.site-header__inner,
+.site-footer__inner{
+    display: flex;
+    width: min(1200px, 100%);
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.site-header__brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-header__mark{
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    background: #e291eb;
+    color: #222;
+}
+
+.site-header__tagline{
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.catalog{
+    display: grid;
+    flex: 1;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 32px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.search-panel{
+    align-self: start;
+}
+
+.search-panel__eyebrow,
+.catalog-results__eyebrow{
+    margin: 0 0 8px;
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.search-panel h1,
+.catalog-results__heading h2{
+    margin: 0;
+}
+
+.search-panel__intro{
+    margin: 10px 0 22px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.search-form{
+    display: grid;
+    gap: 10px;
+}
+
+.search-form__label{
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.search-form__input,
+.search-form__select{
+    width: 100%;
+    min-height: 40px;
+    padding: 8px;
+    border: 1px solid #888;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+.search-form__reset,
+.load-more{
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #555;
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+    font: inherit;
+}
+
+.search-form__reset{
+    margin-top: 8px;
+}
+
+.search-form__reset:hover,
+.load-more:hover{
+    background: #eee;
+}
+
+.catalog-results{
+    min-width: 0;
+}
+
+.catalog-results__heading{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.catalog-results__count{
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.catalog-results__status{
+    min-height: 20px;
+    margin: 0 0 12px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.anime-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 16px;
+}
+
+.anime__card{
+    display: grid;
+    min-width: 0;
+    height: 280px;
+    grid-template-columns: minmax(95px, 0.75fr) minmax(0, 1.25fr);
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.anime__card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anime__card-info{
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    padding: 12px;
+}
+
+.anime__card-title{
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.anime__card-resume{
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+.anime__card-score{
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.load-more{
+    display: block;
+    margin: 20px auto 0;
+}
+
+.load-more:disabled{
+    cursor: wait;
+}
+
+.site-footer{
+    padding: 22px 24px;
+    background: #29272c;
+    color: #ddd;
+}
+
+.site-footer__brand{
+    color: #fff;
+    font-weight: 700;
+}
+
+.site-footer p{
+    margin: 0;
+}
+
+@media (max-width: 800px){
+    .catalog{
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .anime-grid{
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .catalog{
+        grid-template-columns: minmax(0, 1fr);
+        padding: 24px 16px;
+    }
+
+    .search-form{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 12px;
+    }
+
+    .search-form__label[for="anime-search"],
+    #anime-search,
+    .search-form__reset{
+        grid-column: 1 / -1;
+    }
+
+    .anime-grid{
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
