@@ -10,18 +10,18 @@
 <body>
     <header class="site-header">
         <div class="site-header__inner">
-            <a class="site-header__brand" href="#" aria-label="Weebsite home">
-                <span class="site-header__mark" aria-hidden="true"></span>
+            <a class="site-header__brand" href="./index.html" aria-label="KairoAnime home">
+                <img class="site-header__mark" src="./img/chibi.webp" alt="" aria-hidden="true">
                 KairoAnime
             </a>
-            <span class="site-header__tagline">Your anime collection</span>
+            <span class="site-header__tagline">Your anime journey starts here</span>
         </div>
     </header>
     <main class="catalog">
         <aside class="search-panel" aria-labelledby="search-title">
             <p class="search-panel__eyebrow">FIND YOUR NEXT FAVORITE</p>
-            <h1 id="search-title">Explore anime</h1>
-            <p class="search-panel__intro">Search loaded titles. Load more to add pages from the top anime list.</p>
+            <h1 id="search-title">Discover Your Next Anime</h1>
+            <p class="search-panel__intro">Search loaded titles, or choose a genre to browse highly rated matches. Switching genres skips anime already shown during this visit.</p>
             <form class="search-form" id="search-form">
                 <label class="search-form__label" for="anime-search">Anime title</label>
                 <input
@@ -36,26 +36,28 @@
                 <label class="search-form__label" for="genre-filter">Genre</label>
                 <select class="search-form__select" id="genre-filter" name="genres">
                     <option value="">All genres</option>
-                    <option value="1">Action</option>
-                    <option value="2">Adventure</option>
-                    <option value="4">Comedy</option>
-                    <option value="8">Drama</option>
-                    <option value="10">Fantasy</option>
-                    <option value="22">Romance</option>
-                    <option value="24">Sci-Fi</option>
-                    <option value="36">Slice of Life</option>
-                    <option value="14">Horror</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Slice of Life">Slice of Life</option>
+                    <option value="Sports">Sports</option>
                 </select>
 
                 <button class="search-form__reset" id="reset-search" type="reset">Clear</button>
             </form>
+            <img class="search-panel__banner" src="./img/denji.jpg" alt="Denji and Power reading a manga">
         </aside>
 
         <section class="catalog-results" aria-labelledby="results-title">
             <div class="catalog-results__heading">
                 <div>
-                    <p class="catalog-results__eyebrow">TOP ANIME</p>
-                    <h2 id="results-title">Popular anime</h2>
+                    <p class="catalog-results__eyebrow">FEATURED</p>
+                    <h2 id="results-title">Top Picks</h2>
                 </div>
                 <p class="catalog-results__count" id="result-count"></p>
             </div>
@@ -66,9 +68,25 @@
     </main>
     <footer class="site-footer">
         <div class="site-footer__inner">
-            <span class="site-footer__brand">Weebsite</span>
-            <p>Made for anime fans <span aria-hidden="true">✦</span></p>
+            <a class="site-footer__brand" href="./index.html" aria-label="KairoAnime home">KairoAnime</a>
+            <p class="site-footer__quote">
+                <span>There’s still so much I want to understand</span>
+                 <img class="site-footer__character" src="./img/freii.png" alt="Frieren giving a thumbs-up">
+            </p>
         </div>
     </footer>
+    <dialog class="anime-dialog" id="anime-dialog" aria-labelledby="anime-dialog-title">
+        <button class="anime-dialog__close" id="anime-dialog-close" type="button" aria-label="Close description">×</button>
+        <div class="anime-dialog__content">
+            <div class="anime-dialog__cover">
+                <img class="anime-dialog__image" id="anime-dialog-image" alt="">
+                <p class="anime-dialog__score" id="anime-dialog-score"></p>
+            </div>
+            <div>
+                <h2 class="anime-dialog__title" id="anime-dialog-title"></h2>
+                <p class="anime-dialog__description" id="anime-dialog-description"></p>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>

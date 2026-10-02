@@ -1,6 +1,10 @@
 export function makeAnimeCard(data){
     let cardEl = document.createElement("article");
     cardEl.className = "anime__card";
+    cardEl.setAttribute("role", "button");
+    cardEl.setAttribute("tabindex", "0");
+    cardEl.setAttribute("aria-label", `Show full description for ${data.title}`);
+    cardEl.setAttribute("aria-expanded", "false");
 
     let imgEl = document.createElement("img");
     imgEl.src = data.images?.webp?.large_image_url ?? data.images?.jpg?.image_url ?? "";
